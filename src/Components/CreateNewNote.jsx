@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./CreateNewNote.css";
+import { useNotesAppContext } from "./context/NotesAppContext";
 
-const CreateNewNote = ({ colors, handleAddNote }) => {
+const CreateNewNote = () => {
   const [content, setContent] = useState("");
   const [color, setColor] = useState("");
+  const { handleAddNote, colors } = useNotesAppContext();
 
   const handleColorChange = (e, color) => {
     setColor(color);
@@ -46,7 +48,10 @@ const CreateNewNote = ({ colors, handleAddNote }) => {
             ></div>
           ))}
         </div>
-        <button className="btn" onClick={handleCheckAddNote}>
+        <button
+          className="btn"
+          onClick={() => handleCheckAddNote({ content, color })}
+        >
           ADD NOTE
         </button>
       </div>

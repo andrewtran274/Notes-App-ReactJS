@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import "./SearchNotes.css";
+import { useNotesAppContext } from "./context/NotesAppContext";
 
-const SearchNotes = ({ handleSearchNote }) => {
+const SearchNotes = () => {
+  const { setSearchInput } = useNotesAppContext();
   return (
     <div className="search-notes">
       <label htmlFor="search">
@@ -14,7 +16,7 @@ const SearchNotes = ({ handleSearchNote }) => {
         id="search"
         name="search"
         placeholder="Enter your name Notes..."
-        onChange={(e) => handleSearchNote(e.target.value)}
+        onChange={(e) => setSearchInput(e.target.value)}
       />
     </div>
   );

@@ -2,24 +2,20 @@ import React from "react";
 import Note from "./Note";
 import "./NotesList.css";
 import CreateNewNote from "./CreateNewNote";
+import { useNotesAppContext } from "./context/NotesAppContext";
 
-const NotesList = ({
-  notesListData,
-  handleDeleteNote,
-  colors,
-  handleAddNote,
-}) => {
-  console.log(notesListData);
+const NotesList = () => {
+  const { notesList, searchInput } = useNotesAppContext();
+
+  const dataNote = notesList.filter((note) =>
+    note.content.toLowerCase().includes(searchInput.toLowerCase())
+  );
   return (
     <div className="notes-list">
-      {notesListData.map((noteData) => (
-        <Note
-          key={noteData.id}
-          noteData={noteData}
-          handleDeleteNote={handleDeleteNote}
-        />
+      {dataNote.map((noteData) => (
+        <Note key={noteData.id} noteData={noteData} />
       ))}
-      <CreateNewNote colors={colors} handleAddNote={handleAddNote} />
+      <CreateNewNote />
     </div>
   );
 };

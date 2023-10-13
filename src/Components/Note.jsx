@@ -1,8 +1,10 @@
 import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import "./Note.css";
+import { useNotesAppContext } from "./context/NotesAppContext";
 
-const Note = ({ noteData, handleDeleteNote }) => {
+const Note = ({ noteData }) => {
+  const { handleDeleteNote } = useNotesAppContext();
   const { id, content, date, color } = noteData;
   return (
     <div className="note" style={{ background: `${color}` }}>

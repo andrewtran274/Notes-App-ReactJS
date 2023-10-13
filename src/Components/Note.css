@@ -3,7 +3,7 @@
   padding: 20px;
   border-radius: 5px;
   transition: all 0.3s;
-  min-height: 320px;
+  max-height: 320px;
   min-width: 285px;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,14 @@
 }
 
 .content {
+  width: 100%;
   font-size: 20px;
   font-weight: 400;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
 }
 
 .infoNote {
