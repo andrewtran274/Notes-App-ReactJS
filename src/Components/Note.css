@@ -1,0 +1,51 @@
+.note {
+  background-color: #e7ff30;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  min-height: 320px;
+  min-width: 285px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.content {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.infoNote {
+  display: flex;
+  align-items: flex-end;
+  /* background-color: #fff; */
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.infoNote .date {
+  font-size: 15px;
+}
+.infoNote .delete {
+  display: flex;
+  cursor: pointer;
+}
+
+.infoNote .delete .icon {
+  font-size: 30px;
+  transition: all 0.3s;
+}
+
+.infoNote .delete:hover .icon {
+  color: red;
+}
+
+:root {
+  --red: #f0f8ff;
+}

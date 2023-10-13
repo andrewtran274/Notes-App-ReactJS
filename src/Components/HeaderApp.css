@@ -1,0 +1,45 @@
+.header-app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.header-app h1 {
+  font-size: 40px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(1, 99, 68);
+  transition: all 0.4s;
+}
+
+.header-app.dark h1 {
+  color: #fff;
+  transition: all 0.4s;
+}
+.header-app.dark h1 span {
+  color: aqua;
+  transition: all 0.4s;
+}
+
+.header-app h1 span {
+  color: rgb(3, 0, 175);
+  transition: all 0.4s;
+}
+
+.header-app .btn {
+  border: none;
+  padding: 16px 24px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  min-width: 120px;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-color: #356cf7;
+  color: #fff;
+}
+
+.header-app .btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
