@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import { notesData, colors } from "../data/notes";
+import { NotesData, colors } from "../data/notes";
 import { v4 as uuidv4 } from "uuid";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const NotesAppContext = createContext({});
 
@@ -9,9 +10,9 @@ export function useNotesAppContext() {
 }
 
 export function NotesAppContextProvider({ children }) {
-  const [notesList, setNotesList] = useState(notesData);
+  const [notesList, setNotesList] = useLocalStorage("note-list", NotesData);
   const [searchInput, setSearchInput] = useState("");
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useLocalStorage("dark-mode", false);
 
   const handleAddNote = (noteData) => {
     const newNoteData = {

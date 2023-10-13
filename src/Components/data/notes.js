@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const colors = ["#00ff0d", "#e45c1c", "#1cace4", "yellow"];
 
-export const notesData = [
+export const NotesData = [
   {
     id: uuidv4(),
     content: "Learn TypeScript and NextJS",

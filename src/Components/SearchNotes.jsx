@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiSearch } from "react-icons/fi";
-import "./SearchNotes.css";
+import "./styles/SearchNotes.css";
 import { useNotesAppContext } from "./context/NotesAppContext";
 
 const SearchNotes = () => {

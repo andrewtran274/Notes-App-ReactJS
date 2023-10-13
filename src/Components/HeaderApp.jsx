@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeaderApp.css";
+import "./styles/HeaderApp.css";
 import { useNotesAppContext } from "./context/NotesAppContext";
 
 const HeaderApp = () => {

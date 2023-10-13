@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CreateNewNote.css";
+import "./styles/CreateNewNote.css";
 import { useNotesAppContext } from "./context/NotesAppContext";
 
 const CreateNewNote = () => {

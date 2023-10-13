@@ -1,6 +1,6 @@
 import React from "react";
 import Note from "./Note";
-import "./NotesList.css";
+import "./styles/NotesList.css";
 import CreateNewNote from "./CreateNewNote";
 import { useNotesAppContext } from "./context/NotesAppContext";
 
