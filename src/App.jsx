@@ -36,6 +36,9 @@ const notesData = [
 
 const App = () => {
   const [notesList, setNotesList] = useState(notesData);
+  const [searchInput, setSearchInput] = useState("");
+
+  console.log(searchInput);
 
   const handleAddNote = (noteData) => {
     const newNoteData = {
@@ -57,9 +60,11 @@ const App = () => {
     <div className={`app ${isDark ? "dark" : ""}`}>
       <div className="container">
         <HeaderApp handlerDarkMode={setIsDark} isDarkMode={isDark}></HeaderApp>
-        <SearchNotes></SearchNotes>
+        <SearchNotes handleSearchNote={setSearchInput}></SearchNotes>
         <NotesList
-          notesListData={notesList}
+          notesListData={notesList.filter((data) =>
+            data.content.toLowerCase().includes(searchInput.toLowerCase())
+          )}
           handleDeleteNote={handleDeleteNote}
           colors={colors}
           handleAddNote={handleAddNote}

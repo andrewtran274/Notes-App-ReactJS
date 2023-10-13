@@ -12,10 +12,10 @@ const NotesList = ({
   console.log(notesListData);
   return (
     <div className="notes-list">
-      {notesListData.map((note) => (
+      {notesListData.map((noteData) => (
         <Note
-          key={note.id}
-          noteData={note}
+          key={noteData.id}
+          noteData={noteData}
           handleDeleteNote={handleDeleteNote}
         />
       ))}
